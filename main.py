@@ -16,9 +16,9 @@ while True:
     for line in lines:
         for symbol in [".", "-", "+", "<", ">", ":"]:
             line = line.replace(" "+symbol, symbol).replace(symbol+" ", symbol)
-        stripped_line = line.lstrip('0123456789 ')
+        line = line.lstrip('0123456789 ')
         line = line.replace("’", "'")
-        result += stripped_line + "\n"
+        result += line + "\n"
         
     pyperclip.copy(result.strip())
     print("Der bereinigte Text wurde in die Zwischenablage kopiert.")
